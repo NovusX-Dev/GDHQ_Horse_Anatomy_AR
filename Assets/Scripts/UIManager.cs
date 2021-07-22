@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    private static UIManager _instance;
+    public static UIManager Instance => _instance;
+
     public Animator anim;
     public int currentAnim = 0;
+
+    private void Awake()
+    {
+        _instance = this;
+    }
+
     public void Next()
     {
         currentAnim++;
